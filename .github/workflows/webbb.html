@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dhanyashree.N — Portfolio</title>
+  <style>
+    :root{
+      --accent:#6C5CE7;
+      --bg:#FFC0CB; /* baby pink background */
+      --card:#ffffff; /* white cards */
+      --muted:#333333;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: var(--bg);
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      padding:24px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+
+    .container{max-width:1000px; width:100%;}
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:24px;
+    }
+
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{
+      width:52px; height:52px; background:linear-gradient(135deg,var(--accent),#00d4ff);
+      display:flex; align-items:center; justify-content:center; font-weight:700; color:#fff;
+    }
+    nav a{color:var(--muted); text-decoration:none; margin-left:14px}
+    nav a:hover{color:var(--accent)}
+
+    .section-row{
+      display:flex; gap:20px; align-items:flex-start; margin-bottom:24px;
+    }
+
+    .card{
+      background:var(--card);
+      padding:18px;
+      box-shadow:0 8px 30px rgba(0,0,0,0.2);
+      border-radius:0; /* square boxes */
+      flex:1;
+      min-width:280px;
+    }
+
+    .photo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .photo-bg {
+      width: 260px;
+      height: 260px;
+      background: rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius:50%; /* circular background */
+    }
+
+    .photo {
+      width: 240px;
+      height: 240px;
+      background: rgba(255,255,255,0.1);
+      overflow: hidden;
+      border-radius:50%; /* circular image */
+      border: 3px solid rgba(0,0,0,0.1);
+    }
+
+    .photo img{width:100%; height:100%; object-fit:cover}
+
+    .upload-btn{display:inline-block; padding:8px 12px; border-radius:10px; cursor:pointer; background:transparent; border:1px dashed rgba(0,0,0,0.3); color:var(--muted);}
+    .name{font-size:20px; font-weight:600}
+    .title{font-size:13px; color:var(--muted)}
+    .bio{margin-top:8px; color:var(--muted); font-size:14px; line-height:1.4}
+    .contact{margin-top:12px; display:flex; flex-direction:column; gap:6px}
+    .chip{background: rgba(0,0,0,0.05); padding:8px 10px; font-size:13px; color:var(--muted)}
+
+    h1,h2,h3{margin:0}
+    h1{font-size:28px; color:var(--muted)}
+    h2{color:var(--muted); margin-bottom:8px}
+    p.lead{margin:0; color:var(--muted)}
+
+    .projects{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:12px}
+    .project{background: rgba(0,0,0,0.05); padding:10px; border-radius:0; min-height:80px; color:var(--muted)}
+    .project h3{margin:0 0 4px 0; font-size:16px}
+    .project p{margin:0; font-size:12px}
+
+    .skills, .certificates, .education-list{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px}
+    .skill, .certificate, .edu{padding:6px 8px; border-radius:0; font-size:13px; background:rgba(0,0,0,0.05); color:var(--muted)}
+
+    .contact-form{margin-top:16px; display:flex; flex-direction:column; gap:8px}
+    input,textarea{background:transparent; border:1px solid rgba(0,51,51,0.5); padding:10px; color:var(--muted)}
+    button.cta{background:var(--accent); border:none; color:#fff; padding:10px 14px; cursor:pointer; font-weight:600}
+    button.upload-btn{color:var(--muted); border:1px dashed rgba(0,51,51,0.5)}
+
+    @media (max-width:880px){
+      .section-row{flex-direction:column;}
+      .photo-bg, .photo{width:180px; height:180px}
+      .projects{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">DN</div>
+        <div>
+          <div class="name">Dhanyashree.N</div>
+          <div class="title">Frontend Developer • Hassan</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- About Section -->
+    <div class="section-row">
+      <main class="card" id="about">
+        <h2>About Me</h2>
+        <p class="lead">
+          I am a computer science engineering student, dedicated learner aiming to become a skilled software developer.
+          I am passionate about building modern, responsive, and accessible web applications.
+        </p>
+      </main>
+      <aside class="card photo-wrap">
+        <div class="photo-bg">
+          <div class="photo">
+            <img id="profileImg" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=800&q=60&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Profile photo">
+          </div>
+        </div>
+        <label class="upload-btn">
+          Upload Photo
+          <input id="photoInput" type="file" accept="image/*" style="display:none">
+        </label>
+        <div style="text-align:center">
+          <div class="name">Dhanyashree.N</div>
+          <div class="title">Frontend Developer • Hassan</div>
+        </div>
+        <div class="bio">I enjoy building clean, modern interfaces and creating meaningful digital experiences.</div>
+        <div class="contact">
+          <div class="chip">✉ dhanyashree4952@gmail.com</div>
+          <div class="chip">📞 +91-9353038289</div>
+          <div class="chip">📍 Hassan, Karnataka</div>
+          <div class="chip">🔗 github.com/dhanyashree</div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Education Section -->
+    <div class="section-row">
+      <main class="card" id="education">
+        <h2>Education</h2>
+        <div class="education-list">
+          <div class="edu">🎓 Vijaya School</div>
+          <div class="edu">🏫 Excel PU College</div>
+          <div class="edu">💻 BE in Computer Science, Malnad College</div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Skills & Certificates -->
+    <div class="section-row">
+      <main class="card" id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+          <div class="skill">Java</div>
+          <div class="skill">Figma</div>
+          <div class="skill">CSS</div>
+          <div class="skill">Python</div>
+        </div>
+      </main>
+
+      <main class="card" id="certificates">
+        <h2>Certificates</h2>
+        <div class="certificates">
+          <div class="certificate">🏆 SIH Certificate</div>
+          <div class="certificate">🐍 Python Certificate</div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="section-row">
+      <main class="card" id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+          <div class="project">
+            <h3>Online Hospital Application</h3>
+            <p>Responsive web app for hospital management including appointment booking, patient records, and staff management using React and Node.js.</p>
+          </div>
+          <div class="project">
+            <h3>Power BI Data Analytics Project</h3>
+            <p>Analyzed business management data using Power BI to generate dashboards, insights, and performance metrics for decision-making.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section-row" id="contact">
+      <main class="card">
+        <h2>Contact Me</h2>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <input id="name" placeholder="Your name" required>
+          <input id="email" placeholder="Your email" type="email" required>
+          <textarea id="message" rows="4" placeholder="Message"></textarea>
+          <div style="display:flex; gap:8px">
+            <button class="cta" type="submit">Send Message</button>
+            <button type="button" onclick="downloadResume()" class="upload-btn">Download Resume</button>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const photoInput = document.getElementById('photoInput');
+    const profileImg = document.getElementById('profileImg');
+
+    document.querySelector('.upload-btn input[type=file]').addEventListener('change', function(e){
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(ev){
+        profileImg.src = ev.target.result;
+      }
+      reader.readAsDataURL(file);
+    });
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      alert('Thanks, ' + name + '! Your message was not actually sent in this demo.');
+    }
+
+    function downloadResume(){
+      const url = '#';
+      if(url === '#'){
+        alert('No resume linked. Replace the URL in downloadResume() with your resume file link.');
+        return;
+      }
+      const a = document.createElement('a'); 
+      a.href = url; 
+      a.download = 'Resume.pdf'; 
+      document.body.appendChild(a); 
+      a.click(); 
+      a.remove();
+    }
+  </script>
+</body>
+</html>
